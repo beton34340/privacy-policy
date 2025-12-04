@@ -1,0 +1,75 @@
+GIZLILIK POLITIKASI – POMODORO UYGULAMASI
+Son Güncelleme: 05.12.2025
+
+Bu Gizlilik Politikası, Pomodoro zamanlayıcı uygulamasının kullanıcı verilerini nasıl topladığını, kullandığını ve koruduğunu açıklamaktadır. Uygulama hiçbir kişisel veri toplamaz ve tüm bilgiler kullanıcının cihazında yerel olarak saklanır.
+
+TOPLANAN BILGILER
+
+Pomodoro uygulaması kullanıcılardan herhangi bir kişisel veri toplamaz. Uygulama şu bilgileri toplamaz:
+
+Ad, soyad
+
+E-posta adresi
+
+Telefon numarası
+
+Konum bilgisi
+
+IP adresi veya cihaz kimliği
+
+Reklam veya analiz verileri
+
+Kullanıcı davranış bilgisi
+
+Uygulamadaki tüm işlemler cihaz içinde gerçekleşir. Herhangi bir veri üçüncü taraf sunuculara gönderilmez.
+
+UYGULAMANIN KULLANDIĞI İZINLER
+
+Uygulama yalnızca aşağıdaki isteğe bağlı izinleri kullanır:
+
+Bildirim izni: Zamanlayıcı bittiğinde kullanıcıya hatırlatma göndermek için.
+
+Titreşim izni: Odak süresi tamamlandığında kısa titreşim vermek için.
+
+Ses izni: Zamanlayıcı alarm sesini çalmak için.
+
+Bu izinler yalnızca cihazda çalışır ve hiçbir veri dışarı aktarılmaz.
+
+UCUNCU TARAF KUTUPHANELER
+
+Pomodoro uygulaması bazı Flutter paketleri kullanabilir (örn. shared_preferences, provider, just_audio).
+Bu paketler kullanıcı verisi toplamaz ve üçüncü taraflarla paylaşmaz.
+
+Uygulama reklam, takip veya analiz yazılımları içermez.
+
+VERI PAYLASIMI
+
+Uygulama hiçbir veri paylaşmaz. Şu taraflarla hiçbir bilgi aktarımı yapılmaz:
+
+Üçüncü taraf firmalar
+
+Reklam şirketleri
+
+Analiz veya takip servisleri
+
+Diğer uygulamalar
+
+Devlet kurumları
+
+COCUKLARIN GIZLILIGI
+
+Pomodoro uygulaması 13 yaş altı çocuklardan kişisel veri toplamaz.
+Uygulama tüm yaş grupları için veri toplamadan çalışır.
+
+POLITIKA GUNCELLEMELERI
+
+Bu gizlilik politikası gerektiğinde güncellenebilir.
+Değişiklikler bu metinde yayınlandığı anda geçerli olur.
+
+ILETİSİM
+
+Herhangi bir soru veya talep için bizimle iletişime geçebilirsiniz:
+
+E-posta: pomodorodvroyun@gmail.com
+
+© 2025 Pomodoro Uygulaması – Tüm Hakları Saklıdır.
