@@ -1,157 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası - Pomodoro Uygulaması</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            line-height: 1.7;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 20px;
-            background: #fff;
-            margin-top: 40px;
-            margin-bottom: 40px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.08);
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #777;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gizlilik Politikası | Pomodoro Zamanlayıcı</title>
+  <meta name="description" content="Pomodoro Zamanlayıcı uygulaması gizlilik politikası." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --text:#e9eefc;
+      --muted:#b6c3ff;
+      --border:rgba(255,255,255,.12);
+      --accent:#7aa2ff;
+      --accent2:#ff6b6b;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(122,162,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 100% 10%, rgba(255,107,107,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg), #070a14 60%, #060813);
+      min-height:100vh;
+      line-height:1.6;
+    }
+    header{
+      padding:42px 18px 18px;
+    }
+    .wrap{max-width:var(--max); margin:0 auto;}
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .badge .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(122,162,255,.12);
+    }
+    h1{
+      margin:14px 0 6px;
+      font-size: clamp(26px, 4vw, 42px);
+      letter-spacing:-.02em;
+      line-height:1.15;
+    }
+    .sub{
+      color:var(--muted);
+      margin:0;
+      font-size:15px;
+    }
+
+    main{ padding: 10px 18px 60px; }
+    .card{
+      background:rgba(17,26,51,.78);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow:hidden;
+    }
+    .topnote{
+      display:flex; flex-wrap:wrap; gap:10px;
+      padding:14px 16px;
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      margin-bottom:18px;
+    }
+    .pill{
+      display:inline-flex; align-items:center;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      border-radius:999px;
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .pill strong{ color:var(--text); font-weight:600; margin-right:6px;}
+    h2{
+      margin:22px 0 8px;
+      font-size:18px;
+      letter-spacing:-.01em;
+    }
+    h3{
+      margin:14px 0 6px;
+      font-size:15px;
+      color:var(--text);
+    }
+    p{ margin: 0 0 12px; color: rgba(233,238,252,.92); }
+    ul{
+      margin: 0 0 14px 18px;
+      padding:0;
+      color: rgba(233,238,252,.92);
+    }
+    li{ margin: 6px 0; }
+    code{
+      font-family:var(--mono);
+      font-size: .95em;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+    a{
+      color: var(--accent);
+      text-decoration:none;
+      border-bottom:1px solid rgba(122,162,255,.35);
+    }
+    a:hover{ opacity:.9; }
+    footer{
+      padding: 18px;
+      color: rgba(182,195,255,.85);
+      font-size: 13px;
+    }
+    .hr{
+      height:1px; background: rgba(255,255,255,.10);
+      margin: 18px 0;
+    }
+    .contact{
+      display:flex; flex-wrap:wrap; gap:10px;
+      align-items:center;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(122,162,255,.06);
+    }
+    .contact .label{ font-family:var(--mono); color:rgba(182,195,255,.95); }
+    .contact a{ border-bottom: 0; font-weight:600; }
+    .small{ font-size: 13px; color: rgba(182,195,255,.9); margin-top: 4px;}
+  </style>
 </head>
+
 <body>
+  <header>
+    <div class="wrap">
+      <div class="badge" aria-label="policy meta">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Pomodoro Zamanlayıcı • Gizlilik Politikası</span>
+      </div>
+      <h1>Gizlilik Politikası</h1>
+      <p class="sub">Son Güncelleme: <strong>05.12.2025</strong></p>
+    </div>
+  </header>
 
-<div class="container">
-    <h1>Gizlilik Politikası</h1>
+  <main>
+    <div class="wrap">
+      <section class="card">
+        <div class="topnote">
+          <span class="pill"><strong>Uygulama:</strong> Pomodoro Zamanlayıcı</span>
+          <span class="pill"><strong>Reklam:</strong> Yok</span>
+          <span class="pill"><strong>Analiz / İzleme:</strong> Yok</span>
+          <span class="pill"><strong>Veri Toplama:</strong> Yok</span>
+        </div>
 
-    <p><strong>Son Güncelleme:</strong> 05.12.2025</p>
-    <p>
-        Bu Gizlilik Politikası, Pomodoro Zamanlayıcı uygulamasının ("uygulama", "biz") kullanıcıların verilerini nasıl 
-        topladığını, kullandığını ve koruduğunu açıklamaktadır. Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.
-    </p>
+        <p>
+          Bu Gizlilik Politikası, Pomodoro Zamanlayıcı uygulamasının ("uygulama", "biz")
+          kullanıcıların verilerini nasıl topladığını, kullandığını ve koruduğunu açıklamaktadır.
+          Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.
+        </p>
 
-    <h2>1. Toplanan Bilgiler</h2>
-    <h3>1.1. Kişisel Veri Toplamıyoruz</h3>
-    <p>
-        Uygulama hiçbir şekilde ad, soyad, e-posta, telefon numarası veya kişisel veri niteliğinde bilgi toplamaz. 
-        Üyelik, kayıt veya giriş işlemi bulunmamaktadır.
-    </p>
+        <div class="hr"></div>
 
-    <h3>1.2. Cihaz Bilgileri</h3>
-    <p>
-        Uygulama çalışırken yalnızca teknik olarak gerekli, anonim cihaz bilgileri işlenebilir:
-    </p>
-    <ul>
-        <li>Cihaz modeli</li>
-        <li>İşletim sistemi versiyonu</li>
-        <li>Uygulama sürümü</li>
-    </ul>
-    <p>Bu bilgiler kullanıcı kimliği ile ilişkilendirilemez.</p>
+        <h2>1. Toplanan Bilgiler</h2>
 
-    <h3>1.3. Kullanım Verileri</h3>
-    <p>
-        Performans ve hata gidermek amacıyla anonim kullanım istatistikleri işlenebilir:
-    </p>
-    <ul>
-        <li>Ekran görüntüleme bilgileri</li>
-        <li>Zamanlayıcı oturum süreleri</li>
-        <li>Çökme ve hata kayıtları</li>
-    </ul>
-    <p>Bu veriler kimliksizdir ve üçüncü taraflarla paylaşılmaz.</p>
+        <h3>1.1. Kişisel Veri Toplamıyoruz</h3>
+        <p>
+          Uygulama hiçbir şekilde ad, soyad, e-posta, telefon numarası veya kişisel veri niteliğinde bilgi toplamaz.
+          Üyelik, kayıt veya giriş işlemi bulunmamaktadır.
+        </p>
 
-    <h2>2. Yerel Olarak Saklanan Veriler</h2>
-    <p>
-        Uygulama bazı ayarları cihazda saklar (local storage). Bu bilgiler yalnızca cihazınızda bulunur ve internete gönderilmez.
-    </p>
-    <ul>
-        <li>Tema ayarı</li>
-        <li>Ses & titreşim ayarları</li>
-        <li>Pomodoro süre ayarları</li>
-        <li>Onboarding ekranının gösterilip gösterilmeyeceği</li>
-    </ul>
+        <h3>1.2. Cihaz Bilgileri</h3>
+        <p>
+          Uygulama çalışırken yalnızca teknik olarak gerekli, anonim cihaz bilgileri işlenebilir:
+        </p>
+        <ul>
+          <li>Cihaz modeli</li>
+          <li>İşletim sistemi versiyonu</li>
+          <li>Uygulama sürümü</li>
+        </ul>
+        <p>Bu bilgiler kullanıcı kimliği ile ilişkilendirilemez.</p>
 
-    <h2>3. Üçüncü Taraf Kütüphaneleri</h2>
-    <p>
-        Uygulamada kullanılan bazı yazılım kütüphaneleri:
-    </p>
-    <ul>
-        <li>Shared Preferences</li>
-        <li>Just Audio</li>
-        <li>Wakelock</li>
-        <li>url_launcher</li>
-    </ul>
-    <p>Bu kütüphaneler kişisel veri toplamaz.</p>
+        <h3>1.3. Kullanım Verileri</h3>
+        <p>Performans ve hata gidermek amacıyla anonim kullanım istatistikleri işlenebilir:</p>
+        <ul>
+          <li>Ekran görüntüleme bilgileri</li>
+          <li>Zamanlayıcı oturum süreleri</li>
+          <li>Çökme ve hata kayıtları</li>
+        </ul>
+        <p>Bu veriler kimliksizdir ve üçüncü taraflarla paylaşılmaz.</p>
 
-    <h2>4. Reklam ve Veri Paylaşımı</h2>
-    <p>Uygulama:</p>
-    <ul>
-        <li>Reklam göstermez</li>
-        <li>Analiz ve izleme aracı kullanmaz</li>
-        <li>Herhangi bir veri toplamaz veya üçüncü taraflara göndermez</li>
-        <li>Çerez kullanmaz</li>
-    </ul>
+        <h2>2. Yerel Olarak Saklanan Veriler</h2>
+        <p>
+          Uygulama bazı ayarları cihazda saklar (local storage). Bu bilgiler yalnızca cihazınızda bulunur ve internete gönderilmez.
+        </p>
+        <ul>
+          <li>Tema ayarı</li>
+          <li>Ses &amp; titreşim ayarları</li>
+          <li>Pomodoro süre ayarları</li>
+          <li>Onboarding ekranının gösterilip gösterilmeyeceği</li>
+        </ul>
 
-    <h2>5. İzinler</h2>
-    <p>Uygulama yalnızca aşağıdaki izinleri kullanır:</p>
+        <h2>3. Üçüncü Taraf Kütüphaneleri</h2>
+        <p>Uygulamada kullanılan bazı yazılım kütüphaneleri:</p>
+        <ul>
+          <li>Shared Preferences</li>
+          <li>Just Audio</li>
+          <li>Wakelock</li>
+          <li>url_launcher</li>
+        </ul>
+        <p>Bu kütüphaneler kişisel veri toplamaz.</p>
 
-    <h3>5.1. Bildirim İzni</h3>
-    <p>Zamanlayıcı süresi bittiğinde uyarı göndermek için kullanılır. Zorunlu değildir.</p>
+        <h2>4. Reklam ve Veri Paylaşımı</h2>
+        <p>Uygulama:</p>
+        <ul>
+          <li>Reklam göstermez</li>
+          <li>Analiz ve izleme aracı kullanmaz</li>
+          <li>Herhangi bir veri toplamaz veya üçüncü taraflara göndermez</li>
+          <li>Çerez kullanmaz</li>
+        </ul>
 
-    <h3>5.2. Arka Plan / Wakelock</h3>
-    <p>Sayaç çalışırken ekran kapanmasını önlemek için kullanılır.</p>
+        <h2>5. İzinler</h2>
+        <p>Uygulama yalnızca aşağıdaki izinleri kullanır:</p>
 
-    <h2>6. Veri Güvenliği</h2>
-    <p>
-        Veriler yalnızca cihazda saklanır. Uygulama kaldırıldığında tüm veriler silinir. 
-        Hiçbir veri sunucuya gönderilmez veya paylaşılmaz.
-    </p>
+        <h3>5.1. Bildirim İzni</h3>
+        <p>Zamanlayıcı süresi bittiğinde uyarı göndermek için kullanılır. Zorunlu değildir.</p>
 
-    <h2>7. Çocukların Gizliliği</h2>
-    <p>
-        Uygulama 13 yaş altı kullanıcılar için tasarlanmamıştır, ancak kişisel veri toplamadığı için risk oluşturmaz.
-    </p>
+        <h3>5.2. Arka Plan / Wakelock</h3>
+        <p>Sayaç çalışırken ekran kapanmasını önlemek için kullanılır.</p>
 
-    <h2>8. Değişiklikler</h2>
-    <p>
-        Bu gizlilik politikası zaman zaman güncellenebilir. Güncellemeler bu sayfada yayınlanır ve yayınlandığı anda geçerli olur.
-    </p>
+        <h2>6. Veri Güvenliği</h2>
+        <p>
+          Veriler yalnızca cihazda saklanır. Uygulama kaldırıldığında tüm veriler silinir.
+          Hiçbir veri sunucuya gönderilmez veya paylaşılmaz.
+        </p>
 
-    <h2>9. İletişim</h2>
-    <p>
-        Gizlilik politikası ile ilgili sorularınız için bizimle iletişime geçebilirsiniz:
-    </p>
-    <p><strong>E-posta:</strong> pomodorodvroyun@gmail.com</p>
+        <h2>7. Çocukların Gizliliği</h2>
+        <p>
+          Uygulama 13 yaş altı kullanıcılar için tasarlanmamıştır, ancak kişisel veri toplamadığı için risk oluşturmaz.
+        </p>
 
-    <footer>
-        © 2025 Pomodoro App – Tüm Hakları Saklıdır.
-    </footer>
-</div>
+        <h2>8. Değişiklikler</h2>
+        <p>
+          Bu gizlilik politikası zaman zaman güncellenebilir. Güncellemeler bu sayfada yayınlanır ve yayınlandığı anda geçerli olur.
+        </p>
 
+        <h2>9. İletişim</h2>
+        <div class="contact">
+          <span class="label">E-posta:</span>
+          <a href="mailto:pomodorodvroyun@gmail.com">pomodorodvroyun@gmail.com</a>
+        </div>
+        <p class="small">
+          Not: Bu sayfa yalnızca bilgilendirme amaçlıdır. Uygulama kişisel veri toplamadan çalışacak şekilde tasarlanmıştır.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="y"></span> Pomodoro Zamanlayıcı • Gizlilik Politikası
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
